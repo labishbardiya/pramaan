@@ -31,6 +31,8 @@ Completed:
 
 The current prototype is a defensible vertical slice, not the completed national benchmark system. Direct execution of NIST TrojAI Round 13 models is the first national-stage engineering gate.
 
+The precise upgrade path and acceptance checklist are in `docs/EXCELLENT_JURY_DEMO.md`. Treat that file as the definition of an excellent jury demonstrator: one official named NIST case must traverse measured behavior, evidence linkage, receipt, attack verification and disposition without invented data.
+
 ## Product definition
 
 Use this sentence consistently:
@@ -255,6 +257,7 @@ Then open the deck locally and verify fonts, image rendering and presenter view.
 - `docs/PramaanCV_Team_Briefing_and_Presentation_Playbook.docx` — complete team briefing, script and Q&A.
 - `AGENTS.md` — continuity rules.
 - `HANDOFF_PROMPT.md` — copy-paste startup prompt for another LLM.
+- `docs/EXCELLENT_JURY_DEMO.md` — exact official-case cohort, acceptance checklist, live flow and national validation work.
 - `.agents/skills/handoff/SKILL.md` — vendored low-risk handoff-writing skill.
 
 Generated runtime state under `.pramaan/` is intentionally ignored and must not be committed.

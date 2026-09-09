@@ -27,6 +27,7 @@ Open <http://127.0.0.1:8787>.
 - [`presentation/PramaanCV_SIH26228_Final_Story_Deck.pptx`](presentation/PramaanCV_SIH26228_Final_Story_Deck.pptx) is the 14-slide jury deck with speaker notes and sources.
 - [`docs/PramaanCV_Team_Briefing_and_Presentation_Playbook.docx`](docs/PramaanCV_Team_Briefing_and_Presentation_Playbook.docx) takes all six members from the problem definition through the script, live demo, Q&A and national build plan. Five members present; Member 6 owns validation/red-team work and serves as the demo and speaking backup.
 - [`AGENT_HANDOFF.md`](AGENT_HANDOFF.md) and [`HANDOFF_PROMPT.md`](HANDOFF_PROMPT.md) let another LLM or session resume the project from repository state.
+- [`docs/EXCELLENT_JURY_DEMO.md`](docs/EXCELLENT_JURY_DEMO.md) defines the official-case acceptance bar, 90-second jury flow and national validation gates.
 
 ## Ninety-second internal demo
 
