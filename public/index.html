@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PramaanCV</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+  <header><div><h1>PramaanCV</h1><p class="product-meta">SIH26228 · offline computer-vision assurance</p></div><div id="system-status" class="status">LOCAL · READY</div></header>
+  <main>
+    <section class="hero"><div><h2>One evidence trail from contributed data to protected inference</h2><p>Audit a COCO manifest, evaluate a behavioural battery, sign a receipt, and prove tampering or replay.</p><div class="evidence-path" aria-label="Evidence path from data to decision"><span id="path-data">Data</span><i></i><span id="path-model">Model</span><i></i><span id="path-receipt">Receipt</span><i></i><span id="path-decision">Decision</span></div></div><div class="verdict" id="verdict-card" data-state="inconclusive"><span>CURRENT DISPOSITION</span><strong id="verdict" aria-live="polite">INCONCLUSIVE</strong><small id="confidence">Waiting for evidence</small></div></section>
+
+    <nav role="tablist" aria-label="Assurance workflow"><button class="tab active" id="tab-data" role="tab" aria-selected="true" aria-controls="data" data-panel="data">1 · Data</button><button class="tab" id="tab-model" role="tab" aria-selected="false" aria-controls="model" data-panel="model">2 · Model</button><button class="tab" id="tab-receipt" role="tab" aria-selected="false" aria-controls="receipt" data-panel="receipt">3 · Receipt</button><button class="tab" id="tab-evidence" role="tab" aria-selected="false" aria-controls="evidence" data-panel="evidence">4 · Evidence</button></nav>
+
+    <section id="data" class="panel active" role="tabpanel" aria-labelledby="tab-data">
+      <div class="section-head"><div><h3>Audit a COCO annotation file</h3><p class="section-copy">Training-data integrity</p></div><span class="scope">Schema · labels · boxes · duplicates · contributors</span></div>
+      <div class="two"><label class="drop">Choose COCO JSON<input id="coco-file" type="file" accept="application/json,.json"><span id="coco-name">No file selected</span></label><div><p>The analyser validates category references, boxes, orphan records and duplicate annotations. It aggregates findings by <code>contributor_id</code> or <code>source</code> when present.</p><button id="audit-coco">Run data audit</button></div></div>
+      <pre id="data-output" aria-live="polite">No data evidence yet.</pre>
+    </section>
+
+    <section id="model" class="panel" role="tabpanel" aria-labelledby="tab-model" hidden>
+      <div class="section-head"><div><h3>Evaluate a declared behavioural battery</h3><p class="section-copy">Model integrity</p></div><span class="scope">Evasion · injection · localisation</span></div>
+      <p>Import clean and triggered output summaries produced by an official NIST model. PramaanCV evaluates declared deltas and keeps unsupported conclusions explicit.</p>
+      <textarea id="battery-input" spellcheck="false">{
+  "cases": [
+    {
+      "id": "replace-with-official-nist-case",
+      "clean": {"detectionCount": 8, "targetClassCount": 0},
+      "triggered": {"detectionCount": 8, "targetClassCount": 0, "meanBoxShift": 0},
+      "evasionThreshold": 2,
+      "injectionThreshold": 2,
+      "localizationThreshold": 0.15
+    }
+  ]
+}</textarea>
+      <div class="action-row"><button id="audit-battery">Evaluate battery</button><span class="warning">The prefilled neutral control is a schema example, not benchmark evidence.</span></div>
+      <pre id="model-output" aria-live="polite">No model evidence yet.</pre>
+    </section>
+
+    <section id="receipt" class="panel" role="tabpanel" aria-labelledby="tab-receipt" hidden>
+      <div class="section-head"><div><h3>Create and attack a signed receipt</h3><p class="section-copy">Inference provenance</p></div><span class="scope">SHA-256 · Ed25519 · nonce · sequence · hash chain</span></div>
+      <div class="three"><label class="drop">Input image<input id="input-file" type="file" accept="image/*"><span id="input-name">Choose any image</span></label><label class="drop">Model file<input id="model-file" type="file" accept=".onnx,.pt,.pth,.torchscript,application/octet-stream"><span id="model-name">Choose a model</span></label><div><label>Output JSON<textarea id="inference-output">{"boxes":[],"model_status":"demo"}</textarea></label></div></div>
+      <div class="action-row"><button id="create-receipt">Sign receipt</button><button class="secondary" id="tamper-receipt" disabled>Tamper output digest</button><button class="secondary" id="replay-receipt" disabled>Replay record</button></div>
+      <pre id="receipt-output" aria-live="polite">No protected receipt yet.</pre>
+    </section>
+
+    <section id="evidence" class="panel" role="tabpanel" aria-labelledby="tab-evidence" hidden>
+      <div class="section-head"><div><h3>Compile the assurance case</h3><p class="section-copy">Analyst gate</p></div><span class="scope">Accept · review · quarantine · inconclusive</span></div>
+      <button id="compile">Compile decision</button>
+      <div id="evidence-list" class="evidence-list"><p>No evidence has been collected.</p></div>
+      <details><summary>Accepted benchmark suite</summary><div id="benchmarks"></div></details>
+    </section>
+  </main>
+  <footer>Runs on 127.0.0.1. No cloud calls. Every limitation remains visible.</footer>
+  <script type="module" src="app.js"></script>
+</body></html>

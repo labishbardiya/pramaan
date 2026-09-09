@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "benchmarks": [
+    {
+      "id": "nist-trojai-object-detection-feb2023",
+      "role": "primary model-integrity benchmark",
+      "status": "organizer-cited",
+      "publisher": "NIST",
+      "trainModels": 128,
+      "testModels": 192,
+      "holdoutModels": 192,
+      "architectures": ["SSD", "Faster R-CNN", "DETR"],
+      "attackFamilies": ["misclassification", "evasion", "localization", "injection"],
+      "cleanControls": "Includes spurious triggers that do not change clean-model predictions",
+      "officialRecord": "https://data.nist.gov/od/id/mds2-2959",
+      "documentation": "https://pages.nist.gov/trojai/docs/object-detection-feb2023.html",
+      "licenseNote": "Read the included DATA_LICENCE.txt before redistribution."
+    },
+    {
+      "id": "nist-trojai-object-detection-jul2022",
+      "role": "smaller fallback object-detection benchmark",
+      "status": "organizer-cited",
+      "publisher": "NIST",
+      "trainModels": 144,
+      "testModels": 144,
+      "holdoutModels": 144,
+      "architectures": ["SSD", "Faster R-CNN"],
+      "sourceDataset": "COCO",
+      "officialRecord": "https://data.nist.gov/od/id/mds2-2783",
+      "documentation": "https://pages.nist.gov/trojai/docs/object-detection-jul2022.html"
+    },
+    {
+      "id": "coco-o",
+      "role": "natural distribution-shift benchmark",
+      "status": "peer-reviewed ICCV 2023 benchmark",
+      "images": 6782,
+      "domains": ["sketch", "weather", "cartoon", "painting", "tattoo", "handmade"],
+      "classes": 80,
+      "repository": "https://github.com/alibaba/easyrobust/tree/main/benchmarks/coco_o",
+      "paper": "https://openaccess.thecvf.com/content/ICCV2023/papers/Mao_COCO-O_A_Benchmark_for_Object_Detectors_under_Natural_Distribution_Shifts_ICCV_2023_paper.pdf"
+    }
+  ]
+}
