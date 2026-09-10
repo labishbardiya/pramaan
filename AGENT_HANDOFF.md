@@ -312,3 +312,8 @@ The project-level handoff-writing skill was selected through the local Find Skil
 ## Recovery instruction
 
 A new LLM should begin with `AGENTS.md`, read this file completely, inspect `README.md` and the files relevant to its assigned next step, run `npm test`, and continue from the first unchecked priority above. Do not reconstruct strategy from scratch and do not silently widen the product claims.
+
+
+## Official SIH template revision
+
+The user supplied SIH2026_IDEA_PptFormat.pptx. A six-slide deck now follows its section order, SIH logos and footer. Team name is PPLINTH. User states there is no Team ID, so that field reads Not applicable. Files: presentation/PramaanCV_SIH2026_PPLINTH.pptx and .pdf. The six slides replace the earlier expanded story deck for this format. The instruction page is omitted. PPTX package and layout checks passed, and all PDF pages were visually inspected. Content explicitly labels direct model execution and linked evidence as planned, and replay as a simulation. Current fixed confidence values are not calibrated probabilities.
